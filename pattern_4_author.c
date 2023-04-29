@@ -5,12 +5,10 @@ int main()
 {
     int n, s, k;
     scanf("%d", &n);
-    s = 0;
-    k = (n * 2) - 1;
-
-    for (int i = 1; i <= n; i++)
+    s = n - 1;
+    k = 1;
+    for (int i = 1; i <= (n * 2) - 1; i++)
     {
-
         for (int j = 1; j <= s; j++)
         {
             printf(" ");
@@ -21,8 +19,16 @@ int main()
         }
 
         printf("\n");
-        s++;
-        k = k - 2;
+        if (i > n - 1)
+        {
+            s++;
+            k = k - 2;
+        }
+        else if (i <= n - 1)
+        {
+            s--;
+            k += 2;
+        }
     }
 
     return 0;
